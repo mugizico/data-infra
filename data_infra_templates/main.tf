@@ -17,6 +17,7 @@ resource "google_storage_bucket" "data-lake" {
 ## resources for creating a Cloud Composer(Apache Airflow) cluster environment
 
 resource "google_composer_environment" "data-infra-dev" {
+  project  = "carbon-feat-101415"
   provider = google-beta
   name     = "data-infra-dev"
   region   = "us-central1"
@@ -49,3 +50,5 @@ resource "google_composer_environment" "data-infra-dev" {
     environment_size = "ENVIRONMENT_SIZE_SMALL"
   }
 }
+
+
