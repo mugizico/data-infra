@@ -7,3 +7,6 @@ ipython_config.py
 
 # pyenv
 .python-version
+
+# terraform
+*.terraform*
