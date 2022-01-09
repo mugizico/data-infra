@@ -7,3 +7,7 @@
 * SA key should be added as env variable, otherwise good luck...
 
 * remove new line when adding env variable(ugh) : https://github.com/hashicorp/terraform/issues/22796
+
+## January 9, 2022
+
+* latest airflow cloud composer versions: https://cloud.google.com/composer/docs/concepts/versioning/composer-versions

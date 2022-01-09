@@ -12,3 +12,46 @@ resource "google_storage_bucket" "data-lake" {
     }
   }
 }
+
+
+## resources for creating a Cloud Composer(Apache Airflow) cluster environment
+
+resource "google_composer_environment" "data-infra-dev" {
+  name             = "data-infra-dev"
+  region           = "us-central1"
+  environment_size = "ENVIRONMENT_SIZE_SMALL"
+
+  software_config {
+    image_version  = "composer-2.0.0-airflow-2.1.4"
+    python_version = "3.8.12"
+
+  }
+
+  labels = {
+    "airflow-version" = "2.1.4"
+  }
+
+  workloads_config {
+    scheduler {
+      cpu        = 0.5
+      memory_gb  = 1.875
+      storage_gb = 1
+      count      = 1
+    }
+    web_server {
+      cpu        = 0.5
+      memory_gb  = 1.875
+      storage_gb = 1
+    }
+    worker {
+      cpu        = 0.5
+      memory_gb  = 1.875
+      storage_gb = 1
+      min_count  = 1
+      max_count  = 1
+    }
+
+
+  }
+
+}
