@@ -8,7 +8,8 @@ terraform {
 }
 
 provider "google" {
-
+  # GOOGLE_CREDENTIALS Service account key  already set as Environment Variable in TF Cloud
+  # CREDENTIALS = ""
   project = "carbon-feat-101415"
   region  = "us-central1"
   zone    = "us-central1-c"
