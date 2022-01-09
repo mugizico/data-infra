@@ -9,8 +9,8 @@ this repo has 5 subdirectories as following:
 
 * [data_infra_templates](./data_infra_templates) : contains [terraform]() infrastructure declarations for the entire platform to allow quickly spinning up and down all components as needed
 * [workflow_orchestration](./workflow_orchestration) : contains [Airflow]() DAGs/ data pipelines for running batch data processes.
-* [data_processing] (./data_processing) : contains [Apache Beam]() code for reading, writing, and processing data.
-* [data_notebooks] (./data_notebooks) : contains some simple jupyter notebooks for exploring data
+* [data_processing](./data_processing) : contains [Apache Beam]() code for reading, writing, and processing data.
+* [data_notebooks](./data_notebooks) : contains some simple jupyter notebooks for exploring data
 * [docs](./docs) : technical decisions, R&D notes, specs, et al.
 
 
