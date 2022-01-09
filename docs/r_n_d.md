@@ -11,3 +11,5 @@
 ## January 9, 2022
 
 * latest airflow cloud composer versions: https://cloud.google.com/composer/docs/concepts/versioning/composer-versions
+* for Airflow 2.1.+ it looks like I have to use the google-beta provider, otherwise my templates do not work. see: https://cloud.google.com/composer/docs/composer-2/create-environments#terraform
+
