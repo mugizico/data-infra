@@ -13,3 +13,18 @@
 * latest airflow cloud composer versions: https://cloud.google.com/composer/docs/concepts/versioning/composer-versions
 * for Airflow 2.1.+ it looks like I have to use the google-beta provider, otherwise my templates do not work. see: https://cloud.google.com/composer/docs/composer-2/create-environments#terraform
 
+* who here has not been victimized by the "...API has not been used in project 455296207125 before or it is disabled. Enable it by visiting..." error message on Gcloud?
+
+* Airflow 2 requires an additional per project role (Service Agent V2 Ext ??) the easiest way to add this seems like gcloud cli
+  without messing all my other IAM policies
+
+  ```bash
+(base) mugizico@Jeans-Air data_infra_templates % gcloud projects add-iam-policy-binding PROJECT_ID \
+    --member serviceAccount:service-PROJECT_NUMBER@cloudcomposer-accounts.iam.gserviceaccount.com \
+    --role roles/composer.ServiceAgentV2Ext
+Updated IAM policy for project [PROJECT_ID].
+bindings:
+- members:
+  - serviceAccount:service-PROJECT_NUMBER@cloudcomposer-accounts.iam.gserviceaccount.com
+  role: roles/composer.ServiceAgentV2Ext
+  ```
