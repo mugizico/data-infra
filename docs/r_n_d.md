@@ -28,3 +28,8 @@ bindings:
   - serviceAccount:service-PROJECT_NUMBER@cloudcomposer-accounts.iam.gserviceaccount.com
   role: roles/composer.ServiceAgentV2Ext
   ```
+
+### Apache Beam with Python SDK
+
+  * creating a quick and dirty Apache Beam batch pipeline : https://github.com/datastacktv/apache-beam-batch-processing
+  * using Data from Kaggle `Exploration & Prediction of Banking Crisis` https://www.kaggle.com/millicentochieng/exploration-prediction-of-banking-crisis/notebook
