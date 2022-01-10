@@ -9,14 +9,18 @@ def parse_lines(row: str) -> List:
 
 
 class FmtInflationPct(beam.DoFn):
-    """Beam Function to change the inflation
-    from a float to a string formatted to 2 decimal points with %"""
+    """Beam Function to extract three columns from our input data.
+    Those columns are then sunk into BigQuery"""
 
     def process(self, element):
-        inflation = float(element[9])
+        inflation = "{:.2f}".format(float(element[9])) + "%"
         country = element[2]
         crisis_status = element[-1]
-        yield country, "{:.2f}".format(inflation) + "%", crisis_status
+        yield {
+            "country": country,
+            "inflation_pct": inflation,
+            "crisis_status": crisis_status,
+        }
 
 
 def run(argv=None):
