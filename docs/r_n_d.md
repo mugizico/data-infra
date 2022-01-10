@@ -29,7 +29,10 @@ bindings:
   role: roles/composer.ServiceAgentV2Ext
   ```
 
+## January 10, 2022
 ### Apache Beam with Python SDK
 
   * creating a quick and dirty Apache Beam batch pipeline : https://github.com/datastacktv/apache-beam-batch-processing
   * using Data from Kaggle `Exploration & Prediction of Banking Crisis` https://www.kaggle.com/millicentochieng/exploration-prediction-of-banking-crisis/notebook
+  * reading from a google storage bucket : https://beam.apache.org/documentation/programming-guide/#reading-from-a-google-cloud-storage-bucket
+  * For Local testing sans unit tests (yet), using the DirectRunner works well.
