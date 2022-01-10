@@ -3,6 +3,10 @@
 This repo contains an end-to-end data infrastructure proof of concept. It is meant to show how a full-fledged data infrastructure can be built to allow sourcing, cleansing/munging, storing,
 and enabling long-term business analysis. It is not production-ready by any means, but could be a good starting point in building a more robust data platform.
 
+- Start [here](./docs/tech_decisions.md) for a background on what this project is(or isn't)
+
+- Also checkout [my notes](./docs/r_n_d.md) detailing what I am doing and some troubleshooting.
+
 # Structure
 
 this repo has 5 subdirectories as following:
