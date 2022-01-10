@@ -10,3 +10,4 @@ ipython_config.py
 
 # terraform
 *.terraform*
+data_processing/results*
