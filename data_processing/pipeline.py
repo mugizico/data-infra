@@ -1,7 +1,7 @@
 import apache_beam as beam
 import argparse
 import logging
-from typing import List, Dict
+from typing import List
 
 
 def parse_lines(row: str) -> List:
@@ -12,7 +12,7 @@ class FmtInflationPct(beam.DoFn):
     """Beam Function to extract three columns from our input data.
     Those columns are then sunk into BigQuery"""
 
-    def process(self, element: List) -> Dict:
+    def process(self, element):
         inflation = "{:.2f}".format(float(element[9])) + "%"
         country = element[2]
         crisis_status = element[-1]
