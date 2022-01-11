@@ -26,6 +26,7 @@ this repo has 5 subdirectories as following:
 - [ ] create comprehensive unittest suite whenever necessary
 - [ ] enable creation of entire data stack with one top-level script (`script/setup`)
 - [ ] enable automatic teardown of data stack with a script, because this is getting expensive....
+- [ ] enable monitoring and observability 
 ## INFRA templates (Terraform)
 
 - [ ] Create Service Account for Contributors and other developers, and separate it from admin account
