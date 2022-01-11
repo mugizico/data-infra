@@ -40,15 +40,16 @@ def run(argv=None):
         fmt_inflation_lines = lines | "FormatInflationPct" >> beam.ParDo(
             FmtInflationPct()
         )
-        # Write output to local file with a DirectRunner
+        # Write output to local file with a DirectRunner (uncomment to use)
         """
-        fmt_inflation_lines | "WriteOutput" >> beam.io.WriteToText(
+        fmt_inflation_lines | "WriteOutputToLocalFile" >> beam.io.WriteToText(
             args.output, file_name_suffix=".csv"
         )
         """
 
         # Write output to BigQuery with a DataflowRunner
-        fmt_inflation_lines | "WriteOutput" >> beam.io.Write(
+
+        fmt_inflation_lines | "WriteOutputToBigQuery" >> beam.io.Write(
             beam.io.WriteToBigQuery(
                 table_spec,
                 schema="country:STRING,inflation_pct:STRING,crisis_status:STRING",
@@ -60,4 +61,6 @@ def run(argv=None):
 
 if __name__ == "__main__":
     logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.INFO)
+    # TODO (@mugizico) : infer the runner from the pipeline_args and write output to
+    # either BigQuery or local file based on --input location
     run()

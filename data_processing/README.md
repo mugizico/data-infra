@@ -36,13 +36,3 @@ python pipeline.py \
 --region us-central1 \
 --save_main_session
 ```
-
-python pipeline.py \
---input gs://data-infra-staging/data/african_crises.csv \
---output gs://data-infra-staging/dataflow/output \
---runner DataflowRunner \
---project carbon-feat-101415 \
---staging_location gs://data-infra-staging/dataflow/staging \
---temp_location gs://data-infra-staging/dataflow/temp \
---region us-central1 \
---save_main_session
