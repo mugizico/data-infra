@@ -1,6 +1,7 @@
 from airflow.models import DAG
 from airflow.utils.dates import days_ago
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCheckOperator
+from airflow.providers.google.cloud.sensors.gcs import GCSObjectExistenceSensor
 from airflow.providers.google.cloud.operators.dataflow import (
     DataflowTemplatedJobStartOperator,
 )
@@ -28,12 +29,13 @@ with DAG(
 
     start_df_transforms = DataflowTemplatedJobStartOperator(
         task_id="start_df_transforms",
-        template_location=f"gs://{BUCKET_NAME}/dataflow/templates/africa_data_pipeline",
+        template=f"gs://{BUCKET_NAME}/dataflow/templates/africa_data_pipeline",
         parameters={
             "inputFile": f"gs://{BUCKET_NAME}/data/{DATA_FILE_NAME}",
             "bigQueryLoadingTemporaryDirectory": f"gs://{BUCKET_NAME}/dataflow/tmp/",
         },
         project_id=PROJECT_ID,
+        location="us-central1",
         dag=dag,
     )
 
@@ -46,5 +48,4 @@ with DAG(
     validate_gcs_file_exists >> start_df_transforms >> validate_bq_sink
 
 if __name__ == "__main__":
-    dag.clear(reset_dag_runs=True)
     dag.run()

@@ -45,3 +45,12 @@ bindings:
   pipeline runs
 
 * Google-provided template for batch GCS Text(Blob) to BigQuery transform : https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery
+
+### Cloud Composer DAG operations(Add to readme later)
+```
+gcloud composer environments describe data-infra-dev --location us-central1
+gcloud composer environments storage dags import \
+    --environment data-infra-dev \
+    --location us-central1 \
+    --source ../workflow_orchestration/dags/africa.py
+```
