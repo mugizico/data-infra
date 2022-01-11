@@ -18,7 +18,8 @@
 * Airflow 2 requires an additional per project role (Service Agent V2 Ext ??) the easiest way to add this seems like gcloud cli
   without messing all my other IAM policies
 
-  ```bash
+
+```bash
 (base) mugizico@Jeans-Air data_infra_templates % gcloud projects add-iam-policy-binding PROJECT_ID \
     --member serviceAccount:service-PROJECT_NUMBER@cloudcomposer-accounts.iam.gserviceaccount.com \
     --role roles/composer.ServiceAgentV2Ext
