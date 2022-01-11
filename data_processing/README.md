@@ -36,3 +36,8 @@ python pipeline.py \
 --region us-central1 \
 --save_main_session
 ```
+
+for a templated Dataflow job, add a template location option
+```
+--template_location gs://<BUCKET>/templates/africa_data_pipeline
+```
