@@ -30,10 +30,6 @@ with DAG(
     start_df_transforms = DataflowTemplatedJobStartOperator(
         task_id="start_df_transforms",
         template=f"gs://{BUCKET_NAME}/dataflow/templates/africa_data_pipeline",
-        parameters={
-            "inputFile": f"gs://{BUCKET_NAME}/data/{DATA_FILE_NAME}",
-            "bigQueryLoadingTemporaryDirectory": f"gs://{BUCKET_NAME}/dataflow/tmp/",
-        },
         project_id=PROJECT_ID,
         location="us-central1",
         dag=dag,
