@@ -54,3 +54,11 @@ gcloud composer environments storage dags import \
     --location us-central1 \
     --source ../workflow_orchestration/dags/africa.py
 ```
+
+## January 11, 2022
+
+* `parameters` of the Dataflow job templates seem to be messed. When I run the `start_df_transform` dag I am seeing the following error
+```
+[2022-01-11 14:25:25,505] {taskinstance.py:1511} INFO - Marking task as UP_FOR_RETRY. dag_id=africa, task_id=start_df_transforms, execution_date=20220111T142512, start_date=20220111T142523, end_date=20220111T142525
+```
+* remove the `parameters` dict and going with defaults/parameters in the DF template already seems to fix the issue.

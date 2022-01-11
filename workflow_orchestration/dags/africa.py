@@ -37,7 +37,7 @@ with DAG(
 
     validate_bq_sink = BigQueryCheckOperator(
         task_id="validate_bq_sink",
-        sql="SELECT COUNT(*) FROM `carbon-feat-101415.africa_data.african_crises`",
+        sql="SELECT COUNT(*) FROM `carbon-feat-101415.africa_data.africa_crises`",
         use_legacy_sql=False,
     )
 
