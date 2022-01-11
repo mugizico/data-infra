@@ -18,6 +18,26 @@ this repo has 5 subdirectories as following:
 * [docs](./docs) : technical decisions, R&D notes, specs, et al.
 
 
+# TODO (Roadmap)
 
+## General
+- [ ] Stop pushing to `main` directly, start using feature branches for additional work.
+- [ ] flesh out docs
+- [ ] create comprehensive unittest suite whenever necessary
+- [ ] enable creation of entire data stack with one top-level script (`script/setup`)
+- [ ] enable automatic teardown of data stack with a script, because this is getting expensive....
+## INFRA templates (Terraform)
+
+- [ ] Create Service Account for Contributors and other developers, and separate it from admin account
+- [ ] create templates for Jupyter Notebooks (should they be Apache Beam backed?)
+## Workflow Orchestration (Apache Airflow)
+- [ ] When necessary, abstract away common libraries and modules : `dags/core` for general librairies, `dags/operators` for custom ones for e.g.
+- [ ] set up CI/CD for Cloud Composer using Github Actions and [Google CSR](https://cloud.google.com/source-repositories)
+## Data Processing (Apache Beam)
+
+- [ ] Expand aggregations and windowing of data.
+- [ ] Allow for streaming capabilities with a combination of Pub/sub + GCS File Drop Notification if necessary
+## Data Notebooks (Jupyter Notebooks)
+TBD
 
 
