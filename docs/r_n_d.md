@@ -37,3 +37,11 @@ bindings:
   * using Data from Kaggle `Exploration & Prediction of Banking Crisis` https://www.kaggle.com/millicentochieng/exploration-prediction-of-banking-crisis/notebook
   * reading from a google storage bucket : https://beam.apache.org/documentation/programming-guide/#reading-from-a-google-cloud-storage-bucket
   * For Local testing sans unit tests (yet), using the DirectRunner works well.
+
+### Creating a DAG with the DataflowOperator
+
+* dataflow operator doc: https://airflow.apache.org/docs/apache-airflow-providers-google/stable/operators/cloud/dataflow.html
+* using a template for dataflow jobs in production is a good idea. It decouples user provided code from the environment in which the
+  pipeline runs
+
+* Google-provided template for batch GCS Text(Blob) to BigQuery transform : https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery
