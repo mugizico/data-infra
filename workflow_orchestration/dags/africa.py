@@ -1,5 +1,6 @@
 from airflow.models import DAG
 from airflow.utils.dates import days_ago
+from airflow.utils.state import State
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCheckOperator
 from airflow.providers.google.cloud.sensors.gcs import GCSObjectExistenceSensor
 from airflow.providers.google.cloud.operators.dataflow import (
@@ -59,4 +60,5 @@ with DAG(
     validate_gcs_file_exists >> start_df_transforms >> validate_bq_sink
 
 if __name__ == "__main__":
+    dag.clear(dag_run_state=State.NONE)
     dag.run()
